@@ -25,6 +25,9 @@ cell AMX_NATIVE_CALL decode(AMX *amx, cell *params)
 	utility::strinschar(message, ' ', 0, size);
 	utility::decode(message, fmess, size);
 	utility::PluginArrayConvert(amx, fmess, params[1], size);
+	
+	delete []message;
+	delete []fmess;
 	return 1;
 }
 
@@ -38,6 +41,9 @@ cell AMX_NATIVE_CALL encode(AMX *amx, cell *params)
 	utility::strinschar(message, ' ', 0, size);
 	utility::encode(message, fmess, size);
 	utility::PluginArrayConvert(amx, fmess, params[1], size);
+	
+	delete []message;
+	delete []fmess;
 	return 1;
 }
 
